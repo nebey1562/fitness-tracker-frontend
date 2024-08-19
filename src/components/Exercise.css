@@ -1,0 +1,47 @@
+/* Exercise.css */
+
+/* Style for the container column */
+.bg-black {
+  background-color: black; /* Black background for the column */
+}
+
+/* Style for list items */
+.exercise-item {
+background-color: black; /* Default background color for list items */
+color: white; /* Text color for list items */
+border: none; /* Remove border from list items */
+font-weight: bold; /* Make text bold in list items */
+transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.exercise-item:hover {
+background-color: #343a40; /* Dark grey background on hover */
+}
+
+/* Style for primary buttons */
+.btn-primary {
+background-color: black; /* Default button background color */
+border-color: black; /* Button border color */
+color: white; /* Text color for button */
+}
+
+.btn-primary:hover {
+background-color: #343a40; /* Dark grey background on button hover */
+border-color: #343a40; /* Dark grey border on button hover */
+}
+
+/* Style for View Workouts button */
+.btn-view-workouts {
+background-color: #343a40; /* Dark grey color */
+border: none; /* Remove default border */
+color: white; /* White text color */
+}
+
+.btn-view-workouts:hover {
+background-color: #495057; /* Slightly lighter dark grey on hover */
+}
+
+/* Optional: Adjust focus styles for better accessibility */
+.btn-primary:focus, .btn-primary.focus {
+box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); /* Adjust focus shadow color */
+}

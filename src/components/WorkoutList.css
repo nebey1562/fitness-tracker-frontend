@@ -1,0 +1,23 @@
+/* WorkoutList.css */
+.workout-card {
+    background-color: #343a40; /* Dark background for the card */
+    color: #ffffff; /* White text color */
+    border: 1px solid #495057; /* Darker border color */
+    border-radius: 0.25rem; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.workout-card:hover {
+    background-color: #050505; 
+    color: #ffffff;
+    /* Darker grey on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Increase title font size */
+}
+
+.card-text {
+    font-size: 1rem; /* Adjust font size for text */
+}

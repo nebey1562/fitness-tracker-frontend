@@ -1,0 +1,78 @@
+/* App.css */
+
+body {
+  background-color: #121212; /* Dark background for the entire app */
+  color: #e0e0e0; /* Light text color */
+  font-family: Arial, sans-serif; /* Font style for the app */
+}
+
+.container {
+  background-color: #1e1e1e; /* Darker background for containers */
+  border-radius: 8px; /* Rounded corners for containers */
+  padding: 20px; /* Padding inside containers */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+h1, h2, h3 {
+  color: #ffffff; /* White text for headers */
+}
+
+button {
+  background-color: #6200ea; /* Primary button color */
+  color: #ffffff; /* Text color for buttons */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+button:hover {
+  background-color: #3700b3; /* Darker color on hover */
+}
+
+ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+
+li {
+  margin: 10px 0; /* Space between list items */
+}
+
+input, select {
+  background-color: #333333; /* Dark background for inputs */
+  color: #e0e0e0; /* Light text color for inputs */
+  border: 1px solid #444444; /* Border color for inputs */
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%; /* Full width for inputs */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+input:focus, select:focus {
+  border-color: #6200ea; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.navbar {
+  background-color: #1e1e1e; /* Dark background for the navbar */
+}
+
+.navbar-brand, .nav-link {
+  color: #ffffff; /* Light text color for navbar items */
+}
+
+.navbar-brand:hover, .nav-link:hover {
+  color: #bbbbbb; /* Lighter color on hover */
+}
+
+footer {
+  background-color: #1e1e1e; /* Dark background for footer */
+  color: #e0e0e0; /* Light text color for footer */
+  padding: 10px;
+  text-align: center; /* Center align text in footer */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

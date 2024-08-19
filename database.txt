@@ -1,0 +1,65 @@
+MasterTable
+    int id
+    String MuscleGroup
+    
+ExcerciseTable
+    String MuscleGroup
+    string excercise
+
+user
+    int id
+    string name
+    weight,
+    height,
+    age
+
+userworkouts
+    int user_id
+    chest excercise
+    back excercise
+    leg excercise
+    arm excercise
+    shoulder excercise
+    core excercise
+
+
+
+
+
+MongoDB
+    create
+        use <db name>
+    list
+        show dbs
+    delete
+        db.dropDatabase()
+
+    collections
+    display
+        show collections
+    create
+        createCollection("Trainess")
+    rename
+        db.<old_name>.renameCollection(<new_name)
+    delete
+        db.<collection_name>.drop()
+
+    Document
+            create  
+                insertOne
+                insertMany
+            read(List)
+            find
+                findone
+                find
+                find().count()
+                find().sort()
+                find().limit()
+                
+            update
+                updateOne
+                updateMany
+            delete
+                deleteOne
+                deleteMany
+                
