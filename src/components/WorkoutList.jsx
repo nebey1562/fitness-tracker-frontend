@@ -7,7 +7,6 @@ const WorkoutList = () => {
     const [workouts, setWorkouts] = useState([]);
 
     useEffect(() => {
-        // Fetch all workouts from the backend
         axios.get('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/viewWorkouts')
             .then(response => {
                 setWorkouts(response.data);
