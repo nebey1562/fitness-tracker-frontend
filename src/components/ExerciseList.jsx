@@ -6,6 +6,9 @@ import { Container, Row, Col, Form, Button, ListGroup } from 'react-bootstrap';
 const ExerciseList = () => {
     const { groupName } = useParams(); // Extract muscle group from URL
     const [exercises, setExercises] = useState([]);
+    const [exercise, setExercise] = useState('');
+    const [weight, setWeight] = useState('');
+    const [reps, setReps] = useState('');
 
     useEffect(() => {
         if (groupName) {
@@ -19,9 +22,28 @@ const ExerciseList = () => {
         }
     }, [groupName]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic
+
+        const workoutData = {
+            exercise,
+            weight: parseFloat(weight),
+            reps: parseInt(reps),
+            muscleGroup: groupName
+        };
+
+        try {
+            const response = await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log('Workout logged successfully:', response.data);
+            // Handle success (e.g., display a success message or clear the form)
+        } catch (error) {
+            console.error('Error logging workout:', error);
+            // Handle error (e.g., display an error message)
+        }
     };
 
     return (
@@ -46,6 +68,8 @@ const ExerciseList = () => {
                                 placeholder="Enter exercise"
                                 required
                                 className="bg-dark text-light"
+                                value={exercise}
+                                onChange={(e) => setExercise(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group controlId="formWeight">
@@ -55,6 +79,8 @@ const ExerciseList = () => {
                                 placeholder="Enter weight"
                                 required
                                 className="bg-dark text-light"
+                                value={weight}
+                                onChange={(e) => setWeight(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group controlId="formReps">
@@ -64,6 +90,8 @@ const ExerciseList = () => {
                                 placeholder="Enter reps"
                                 required
                                 className="bg-dark text-light"
+                                value={reps}
+                                onChange={(e) => setReps(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group controlId="formMuscleGroup">
