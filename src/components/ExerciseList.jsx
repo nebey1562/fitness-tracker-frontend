@@ -39,10 +39,8 @@ const ExerciseList = () => {
                 }
             });
             console.log('Workout logged successfully:', response.data);
-            // Handle success (e.g., display a success message or clear the form)
         } catch (error) {
             console.error('Error logging workout:', error);
-            // Handle error (e.g., display an error message)
         }
     };
 

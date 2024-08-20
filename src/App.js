@@ -6,8 +6,7 @@ import Exercises from './components/Exercises';
 import ExerciseList from './components/ExerciseList';
 import WorkoutList from './components/WorkoutList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'; // Import the custom CSS file
-
+import './App.css';
 function App() {
   const [muscleGroups, setMuscleGroups] = useState({});
 
