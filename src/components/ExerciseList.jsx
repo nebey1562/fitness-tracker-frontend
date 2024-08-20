@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, ListGroup } from 'react-bootstrap';
 
 const ExerciseList = () => {
-    const { groupName } = useParams(); // Extract muscle group from URL
+    const { groupName } = useParams();
     const [exercises, setExercises] = useState([]);
     const [exercise, setExercise] = useState('');
     const [weight, setWeight] = useState('');
@@ -32,16 +32,12 @@ const ExerciseList = () => {
             muscleGroup: groupName
         };
 
-        try {
-            const response = await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            console.log('Workout logged successfully:', response.data);
-        } catch (error) {
-            console.error('Error logging workout:', error);
-        }
+        const response = await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log('Workout logged successfully:', response.data);
     };
 
     return (

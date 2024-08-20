@@ -12,9 +12,6 @@ const WorkoutList = () => {
             .then(response => {
                 setWorkouts(response.data);
             })
-            .catch(error => {
-                console.error('Error fetching workouts:', error);
-            });
     }, []);
 
     return (

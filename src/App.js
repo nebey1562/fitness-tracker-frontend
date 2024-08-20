@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import Home from './components/Home';
 import Exercises from './components/Exercises';
@@ -7,6 +7,7 @@ import ExerciseList from './components/ExerciseList';
 import WorkoutList from './components/WorkoutList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 function App() {
   const [muscleGroups, setMuscleGroups] = useState({});
 
@@ -15,9 +16,6 @@ function App() {
       .then(response => {
         setMuscleGroups(response.data);
       })
-      .catch(error => {
-        console.error("There was an error fetching the data!", error);
-      });
   }, []);
 
   return (

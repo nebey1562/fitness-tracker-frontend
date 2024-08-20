@@ -13,13 +13,8 @@ const Exercises = () => {
             .then(response => {
                 if (Array.isArray(response.data)) {
                     setMuscleGroups(response.data);
-                } else {
-                    console.error('Unexpected response structure:', response.data);
-                }
+                } 
             })
-            .catch(error => {
-                console.error('Error fetching muscle groups:', error);
-            });
     }, []);
 
     const handleViewExercises = (muscleGroup) => {
