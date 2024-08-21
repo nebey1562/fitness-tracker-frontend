@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/fitness-tracker-frontend/static/css/main.0b900f7d.css",
-    "main.js": "/fitness-tracker-frontend/static/js/main.67569737.js",
+    "main.css": "/fitness-tracker-frontend/static/css/main.c7686a00.css",
+    "main.js": "/fitness-tracker-frontend/static/js/main.5694cb3a.js",
     "static/js/453.9b213ec2.chunk.js": "/fitness-tracker-frontend/static/js/453.9b213ec2.chunk.js",
     "static/media/dumbell.jpeg": "/fitness-tracker-frontend/static/media/dumbell.9eedf1e6218b38d79b35.jpeg",
     "index.html": "/fitness-tracker-frontend/index.html",
-    "main.0b900f7d.css.map": "/fitness-tracker-frontend/static/css/main.0b900f7d.css.map",
-    "main.67569737.js.map": "/fitness-tracker-frontend/static/js/main.67569737.js.map",
+    "main.c7686a00.css.map": "/fitness-tracker-frontend/static/css/main.c7686a00.css.map",
+    "main.5694cb3a.js.map": "/fitness-tracker-frontend/static/js/main.5694cb3a.js.map",
     "453.9b213ec2.chunk.js.map": "/fitness-tracker-frontend/static/js/453.9b213ec2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b900f7d.css",
-    "static/js/main.67569737.js"
+    "static/css/main.c7686a00.css",
+    "static/js/main.5694cb3a.js"
   ]
 }
