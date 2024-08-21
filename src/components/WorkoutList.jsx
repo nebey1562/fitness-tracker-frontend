@@ -15,7 +15,6 @@ const WorkoutList = () => {
             .then(response => {
                 setWorkouts(response.data);
             })
-            .catch(error => console.error('Error fetching workouts:', error));
     }, []);
 
     const handleCardClick = (workout) => {
@@ -26,7 +25,7 @@ const WorkoutList = () => {
     };
 
     const handleUpdate = async () => {
-        try {
+
             await axios.put('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/updateLog', {
                 date: selectedWorkout.date,
                 weight: weight,
@@ -36,9 +35,6 @@ const WorkoutList = () => {
                 w._id === selectedWorkout._id ? { ...w, weight, reps } : w
             ));
             setShowModal(false);
-        } catch (error) {
-            console.error('Error updating workout:', error);
-        }
     };
 
     return (

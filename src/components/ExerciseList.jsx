@@ -17,7 +17,6 @@ const ExerciseList = () => {
                 .then(response => {
                     setExercises(response.data);
                 })
-                .catch(error => console.error('Error fetching exercises:', error));
         }
     }, [groupName]);
 
@@ -30,8 +29,6 @@ const ExerciseList = () => {
             reps: parseInt(reps),
             muscleGroup: groupName
         };
-
-        try {
             await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,9 +38,6 @@ const ExerciseList = () => {
             setExercise('');
             setWeight('');
             setReps('');
-        } catch (error) {
-            console.error('Error logging workout:', error);
-        }
     };
 
     return (
