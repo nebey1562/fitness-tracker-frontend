@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Button, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './Exercise.css'; // Import your CSS file
 
 const Exercises = () => {
@@ -15,6 +15,7 @@ const Exercises = () => {
                     setMuscleGroups(response.data);
                 } 
             })
+            .catch(error => console.error('Error fetching muscle groups:', error));
     }, []);
 
     const handleViewExercises = (muscleGroup) => {
@@ -30,22 +31,36 @@ const Exercises = () => {
             <Row className="justify-content-center">
                 <Col md={8} lg={6} className="bg-black p-4 rounded">
                     <h1 className="text-center mb-4">Muscle Groups</h1>
-                    <ListGroup variant="flush" className="mb-4">
+                    <Row>
                         {muscleGroups.length > 0 ? (
                             muscleGroups.map(group => (
-                                <ListGroup.Item key={group} className="exercise-item">
-                                    <Button variant="primary" onClick={() => handleViewExercises(group)} className="w-100">
-                                        {group}
-                                    </Button>
-                                </ListGroup.Item>
+                                <Col md={6} key={group} className="mb-4">
+                                    <Card 
+                                        className="workout-card"
+                                        onClick={() => handleViewExercises(group)}
+                                    >
+                                        <Card.Body>
+                                            <Card.Title className="card-title">{group}</Card.Title>
+                                            <Card.Text className="card-text">
+                                                View exercises for {group}
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
                             ))
                         ) : (
-                            <ListGroup.Item className="exercise-item">
-                                Loading muscle groups...
-                            </ListGroup.Item>
+                            <Col>
+                                <Card className="workout-card">
+                                    <Card.Body>
+                                        <Card.Text className="card-text">
+                                            Loading muscle groups...
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         )}
-                    </ListGroup>
-                    <Button variant="dark" onClick={handleViewWorkouts} className="w-100 btn-view-workouts">
+                    </Row>
+                    <Button variant="dark" onClick={handleViewWorkouts} className="w-100 btn-view-workouts mt-4">
                         View Workouts
                     </Button>
                 </Col>

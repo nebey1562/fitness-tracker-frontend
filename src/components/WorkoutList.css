@@ -15,9 +15,42 @@
 }
 
 .card-title {
-    font-size: 1.25rem; /* Increase title font size */
+    font-size: 1.25rem; 
 }
 
 .card-text {
-    font-size: 1rem; /* Adjust font size for text */
+    font-size: 1rem; 
+}
+.exercise-card {
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.exercise-card:hover {
+    transform: scale(1.05);
+    background-color: #444; /* Slightly lighter background on hover */
+}
+
+.exercise-card .card-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttonsil.btn-primary {
+    background-color: #050505;
+    border-color: #050505;
+    color: white;
+}
+
+.buttonsil.btn-primary:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.Modal-head{
+    background-color:#050505;
+    color:#ffffff;
+}
+.Modal{
+    color:#050505
 }

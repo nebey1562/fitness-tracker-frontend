@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Container, Row, Col, Form, Button, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import './WorkoutList.css';
 
 const ExerciseList = () => {
     const { groupName } = useParams();
@@ -16,6 +17,7 @@ const ExerciseList = () => {
                 .then(response => {
                     setExercises(response.data);
                 })
+                .catch(error => console.error('Error fetching exercises:', error));
         }
     }, [groupName]);
 
@@ -29,15 +31,19 @@ const ExerciseList = () => {
             muscleGroup: groupName
         };
 
-        await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        try {
+            await axios.post('https://fitness-tracker-backend-five.vercel.app/api/v1/fitness/LogExcercise/', workoutData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        setExercise('');
-        setWeight('');
-        setReps('');
+            setExercise('');
+            setWeight('');
+            setReps('');
+        } catch (error) {
+            console.error('Error logging workout:', error);
+        }
     };
 
     return (
@@ -45,13 +51,20 @@ const ExerciseList = () => {
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
                     <h1 className="text-center mb-4">{groupName} exercises</h1>
-                    <ListGroup variant="flush" className="mb-4">
-                        {exercises.map(exerciseItem => (
-                            <ListGroup.Item key={exerciseItem} className="bg-secondary text-light border-0" onClick={() => setExercise(exerciseItem)}>
-                                {exerciseItem}
-                            </ListGroup.Item>
+                    <Row>
+                        {exercises.map((exerciseItem, index) => (
+                            <Col md={6} key={index} className="mb-4">
+                                <Card 
+                                    className="exercise-card bg-secondary text-light"
+                                    onClick={() => setExercise(exerciseItem)}
+                                >
+                                    <Card.Body>
+                                        <Card.Title>{exerciseItem}</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         ))}
-                    </ListGroup>
+                    </Row>
 
                     <h2 className="text-center mb-4">Log Workout</h2>
                     <Form onSubmit={handleSubmit} className="bg-secondary p-4 rounded">
@@ -97,7 +110,8 @@ const ExerciseList = () => {
                                 className="bg-dark text-light"
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit" className="w-100 mt-3">
+                        <br />
+                        <Button variant="primary" type="submit" className="buttonsil">
                             Log Workout
                         </Button>
                     </Form>

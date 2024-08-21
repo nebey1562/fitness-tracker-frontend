@@ -45,3 +45,25 @@ background-color: #495057; /* Slightly lighter dark grey on hover */
 .btn-primary:focus, .btn-primary.focus {
 box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); /* Adjust focus shadow color */
 }
+.workout-card {
+  background-color: #ffffff; 
+  color:#050505;
+  border: 1px solid #495057; /* Darker border color */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  text-align: center; /* Center align text */
+}
+
+.workout-card:hover {
+  background-color: #ffffff; /* Darker grey on hover */
+  color: #000000; /* Ensure text remains white */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Increase font size for title */
+}
+
+.card-text {
+  font-size: 1rem; /* Standard font size for text */
+}
