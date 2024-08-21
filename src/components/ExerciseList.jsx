@@ -47,7 +47,7 @@ const ExerciseList = () => {
                     <h1 className="text-center mb-4">{groupName} exercises</h1>
                     <ListGroup variant="flush" className="mb-4">
                         {exercises.map(exerciseItem => (
-                            <ListGroup.Item key={exerciseItem} className="bg-secondary text-light border-0">
+                            <ListGroup.Item key={exerciseItem} className="bg-secondary text-light border-0" onClick={() => setExercise(exerciseItem)}>
                                 {exerciseItem}
                             </ListGroup.Item>
                         ))}
